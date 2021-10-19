@@ -20,8 +20,10 @@ export const environment = {
   detailURL: 'http://localhost:4200/detail',
 
   //todo
-  logout: 'https://acme.example.com:443/am/oauth2/logout?' +
-          'client_id=clientOIDC_0&' +
-          'logout_uri=http://localhost:4200/home'
+  logout: 'https://acme.example.com/am/oauth2/connect/endSession'
+
+  //logout: 'https://acme.example.com:443/am/oauth2/logout?' +
+  //        'client_id=clientOIDC_0&' +
+  //        'logout_uri=http://localhost:4200/home'
 };
 
