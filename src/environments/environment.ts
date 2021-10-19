@@ -1,19 +1,23 @@
 export const environment = {
   production: false,
 
-  sso_api_username: '28omb38m5vuf3bv2dpa1efl4bv',
-  sso_api_pwd: '1cdr9hv9d8o3r5e6u48t7pjqu82lue8nidq49t46s3tmg4i7b4mf',
+  sso_api_username: 'clientOIDC_0',
+  sso_api_pwd: 'njX7v0ykjp0xALEG2LnoSo89',
 
-  loginURL: 'https://fr-pools.auth-fips.us-gov-west-1.amazoncognito.com/oauth2/authorize?' +
-              'client_id=28omb38m5vuf3bv2dpa1efl4bv&response_type=code&scope=openid+profile&' +
-              'redirect_uri=http://localhost:4200/callback&idp_identifier=fr-idp',
+  loginURL: 'https://acme.example.com:443/am/oauth2/authorize?' +
+              'client_id=clientOIDC_0&response_type=code&scope=openid+profile+email&' +
+              'redirect_uri=http://localhost:4200/callback',
 
   redirectURL: 'http://localhost:4200/callback',
 
-  cognitoTokenURL: 'https://fr-pools.auth-fips.us-gov-west-1.amazoncognito.com/oauth2/token',
+  oidcTokenURL: 'http://localhost:4200/token',
 
-  logout: 'https://fr-pools.auth-fips.us-gov-west-1.amazoncognito.com/logout?' +
-          'client_id=28omb38m5vuf3bv2dpa1efl4bv&' +
+  //todo
+  detailURL: 'http://localhost:4200/detail',
+
+  //todo
+  logout: 'https://acme.example.com:443/am/oauth2/logout?' +
+          'client_id=clientOIDC_0&' +
           'logout_uri=http://localhost:4200/home'
 };
 

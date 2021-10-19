@@ -14,14 +14,13 @@ export class AwsCognitoService {
     const details = {
       grant_type: 'authorization_code',
       code: callbackCode,
-      scope: 'openid+profile',
       redirect_uri: environment.redirectURL
     };
     const formBody = Object.keys(details)
                            .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(details[key])}`)
                            .join('&');
     console.log('in getTokenDetailsFromCognito() code=', callbackCode);
-    return this.http.post<any>(environment.cognitoTokenURL,
+    return this.http.post<any>(environment.oidcTokenURL,
       formBody, {
         responseType: 'json',
         headers: new HttpHeaders({
