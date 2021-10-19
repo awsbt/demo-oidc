@@ -10,6 +10,10 @@ export const environment = {
 
   redirectURL: 'http://localhost:4200/callback',
 
+  /* FR OIDC CORS policy prevent angular to call this endpoint from localhost: https://acme.example.com:443/am/oauth2/access_token
+  * created proxy.conf.json to bypass. --make it a backchannel flow.
+  * ng serve --proxy-config proxy.conf.json
+  */
   oidcTokenURL: 'http://localhost:4200/token',
 
   //todo
