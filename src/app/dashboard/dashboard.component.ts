@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AwsCognitoService } from '../service/aws-cognito.service';
+import { UserDetailService } from '../service/user-detail.service';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { switchMap, finalize, catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,8 +15,10 @@ export class DashboardComponent implements OnInit {
 
   tokenDetails: any;
   token: any;
+  result: any;
 
-  constructor(private awsCognitoService: AwsCognitoService, private http: HttpClient) { }
+  constructor(private userDetailService: UserDetailService,
+              private http: HttpClient) { }
 
   ngOnInit(): void {
     console.log('Token: ', localStorage.getItem('token'));
@@ -21,16 +26,19 @@ export class DashboardComponent implements OnInit {
     this.token = localStorage.getItem('token');
 
     if (this.token) {
-      const base64Url = this.token.split('.')[1];      
-      const base64 = base64Url.replace('-', '+').replace('_', '/');
-      this.tokenDetails = JSON.parse(atob(base64));
+      // const base64Url = this.token.split('.')[1];      
+      // const base64 = base64Url.replace('-', '+').replace('_', '/');
+      // this.tokenDetails = JSON.parse(atob(base64));
 
-      console.log('Token Detail: ', this.tokenDetails);
+      console.log('Access Token Detail: ', this.token);
     }
   }
 
-  detail(): void {
-    this.http.get<any>(environment.detailURL,);
+  detail() {
+    this.token = localStorage.getItem('token');    
+    this.userDetailService.getUserDetails(this.token).subscribe(data => {
+      console.log('user info: ' + JSON.stringify(data));
+    })
   }
 
   logout(): void {

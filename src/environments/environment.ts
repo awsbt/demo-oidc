@@ -8,10 +8,6 @@ export const environment = {
               'client_id=clientOIDC_0&response_type=code&scope=openid+profile+email&' +
               'redirect_uri=http://localhost:4200/callback',
 
-  //loginURL: 'https://viva-account.signin.aws.amazon.com/oauth?client_id=arn:aws:iam::993703395708:oidc-provider/acme.example.com' +
-  //            '&response_type=code&scope=openid+profile+email&' +
-  //            'redirect_uri=http://localhost:4200/callback',              
-
   redirectURL: 'http://localhost:4200/callback',
 
   /* FR OIDC CORS policy prevent angular to call this endpoint from localhost: https://acme.example.com:443/am/oauth2/access_token
@@ -30,4 +26,3 @@ export const environment = {
   //        'client_id=clientOIDC_0&' +
   //        'logout_uri=http://localhost:4200/home'
 };
-
