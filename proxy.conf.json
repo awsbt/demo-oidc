@@ -1,6 +1,6 @@
 {
     "/token": {
-      "target": "https://acme.example.com:443/am/oauth2/access_token",
+      "target": "https://awsfroidcsaml2.tk:443/am/oauth2/access_token",
       "secure": false,
       "changeOrigin": true,
       "pathRewrite": {
@@ -8,7 +8,7 @@
       }
     },
     "/detail": {
-        "target": "https://acme.example.com:443/am/oauth2/userinfo",
+        "target": "https://awsfroidcsaml2.tk:443/am/oauth2/userinfo",
         "secure": false,
         "changeOrigin": true,
         "pathRewrite": {
