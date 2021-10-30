@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AwsCognitoService } from '../service/aws-cognito.service';
 import { UserDetailService } from '../service/user-detail.service';
+import { LogoutService } from '../service/logout.service';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
@@ -16,13 +17,15 @@ export class DashboardComponent implements OnInit {
   tokenDetails: any;
   token: any;
   result: any;
+  id_token: any;
 
-  constructor(private userDetailService: UserDetailService,
+  constructor(private userDetailService: UserDetailService, private logoutService: LogoutService,
               private http: HttpClient) { }
 
   ngOnInit(): void {
     console.log('Token: ', localStorage.getItem('token'));
-
+    console.log('Id Token: ', localStorage.getItem('id_token'));
+    this.id_token = localStorage.getItem('id_token');
     this.token = localStorage.getItem('token');
 
     if (this.token) {
@@ -42,7 +45,12 @@ export class DashboardComponent implements OnInit {
   }
 
   logout(): void {
-    window.location.assign(environment.logout);
+    this.token = localStorage.getItem('token');    
+    this.id_token = localStorage.getItem('id_token');  
+    this.logoutService.endSession(this.token, this.id_token).subscribe(data => {
+      //console.log('user info: ' + JSON.stringify(data));
+      window.location.assign(environment.postLogoutRedirectURL);
+    })        
   }
 
 }

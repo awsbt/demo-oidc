@@ -14,5 +14,13 @@
       "pathRewrite": {
         "^/detail": ""
       }
+    },
+  "/logout": {
+    "target": "https://afc7b5a6b025b4828bf8bad6eadfdcee-eaa53f72a0e29f95.elb.us-east-1.amazonaws.com:443/am/oauth2/connect/endSession",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/logout": ""
     }
+  }
 }
