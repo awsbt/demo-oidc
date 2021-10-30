@@ -19,7 +19,7 @@ export class AwsCognitoService {
     const formBody = Object.keys(details)
                            .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(details[key])}`)
                            .join('&');
-    console.log('in getTokenDetailsFromCognito() code=', callbackCode);
+    //console.log('in getTokenDetailsFromCognito() code=', callbackCode);
     return this.http.post<any>(environment.oidcTokenURL,
       formBody, {
         responseType: 'json',

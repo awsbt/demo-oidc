@@ -23,18 +23,10 @@ export class DashboardComponent implements OnInit {
               private http: HttpClient) { }
 
   ngOnInit(): void {
-    console.log('Token: ', localStorage.getItem('token'));
-    console.log('Id Token: ', localStorage.getItem('id_token'));
+    //console.log('Token: ', localStorage.getItem('token'));
+    //console.log('Id Token: ', localStorage.getItem('id_token'));
     this.id_token = localStorage.getItem('id_token');
     this.token = localStorage.getItem('token');
-
-    if (this.token) {
-      // const base64Url = this.token.split('.')[1];      
-      // const base64 = base64Url.replace('-', '+').replace('_', '/');
-      // this.tokenDetails = JSON.parse(atob(base64));
-
-      console.log('Access Token Detail: ', this.token);
-    }
   }
 
   detail() {
@@ -44,11 +36,30 @@ export class DashboardComponent implements OnInit {
     })
   }
 
+  accessToken() {
+    this.token = localStorage.getItem('token');
+    console.log('Access Token Detail: ', this.token);
+  }
+
+  idToken() {
+    this.id_token = localStorage.getItem('id_token');
+    if (this.id_token) {
+      const base64Url = this.id_token.split('.')[1];      
+      const base64 = base64Url.replace('-', '+').replace('_', '/');
+      this.tokenDetails = JSON.parse(atob(base64));
+
+      console.log('ID Token Detail: ', this.tokenDetails);    
+    }
+  }
+
+  aws() {
+    
+  }
+
   logout(): void {
     this.token = localStorage.getItem('token');    
     this.id_token = localStorage.getItem('id_token');  
     this.logoutService.endSession(this.token, this.id_token).subscribe(data => {
-      //console.log('user info: ' + JSON.stringify(data));
       window.location.assign(environment.postLogoutRedirectURL);
     })        
   }
