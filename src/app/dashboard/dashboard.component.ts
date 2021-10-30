@@ -18,6 +18,7 @@ export class DashboardComponent implements OnInit {
   token: any;
   result: any;
   id_token: any;
+  code: any;
 
   constructor(private userDetailService: UserDetailService, private logoutService: LogoutService,
               private http: HttpClient) { }
@@ -52,8 +53,13 @@ export class DashboardComponent implements OnInit {
     }
   }
 
+  codeDetail() {
+    this.code = localStorage.getItem('code');
+    console.log('CODE Detail: ', this.code);
+  }
+
   aws() {
-    
+
   }
 
   logout(): void {
