@@ -2,10 +2,10 @@ export const environment = {
   production: false,
 
   sso_api_username: 'clientOIDC_0',
-  sso_api_pwd: 'PIqx04ie6kfuSUB1BCjtN72M',
+  sso_api_pwd: 'qWVP4sCFULjcdUGm9euYJAHd',
 
   loginURL: 'https://afc7b5a6b025b4828bf8bad6eadfdcee-eaa53f72a0e29f95.elb.us-east-1.amazonaws.com:443/am/oauth2/authorize?' +
-              'client_id=clientOIDC_0&response_type=code&scope=openid+profile+email+employeeType+access-project&' +
+              'client_id=clientOIDC_0&response_type=code&scope=openid+profile+email+access-project&' +
               'redirect_uri=http://localhost:4200/callback',
 
   redirectURL: 'http://localhost:4200/callback',
