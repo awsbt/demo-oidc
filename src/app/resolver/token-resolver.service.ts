@@ -33,7 +33,7 @@ export class TokenResolverService implements Resolve<any> {
   getTokenDetailsFromCognito(code: string): Observable<any | null> {
     return this.awsCognitoService.getTokenDetailsFromCognito(code).pipe(
       switchMap((response: any) => {
-        console.log('Response: ', response);
+        //console.log('Response: ', response);
         localStorage.setItem('code', code);
         localStorage.setItem('id_token', response.id_token);
         localStorage.setItem('token', response.access_token);
