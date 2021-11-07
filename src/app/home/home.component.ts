@@ -17,4 +17,9 @@ export class HomeComponent implements OnInit {
     window.location.assign(environment.loginURL);
   }
 
+  aws() {
+    //window.location.assign(environment.awsConsoleLoginURL);
+    window.open(environment.awsConsoleLoginURL,'_blank');
+  }
+
 }

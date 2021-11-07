@@ -59,7 +59,8 @@ export class DashboardComponent implements OnInit {
   }
 
   aws() {
-
+    //window.location.assign(environment.awsConsoleLoginURL);
+    window.open(environment.awsConsoleLoginURL,'_blank');
   }
 
   logout(): void {
