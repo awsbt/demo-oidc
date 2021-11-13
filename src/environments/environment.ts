@@ -4,11 +4,11 @@ export const environment = {
   sso_api_username: 'clientOIDC_0',
   sso_api_pwd: 'qWVP4sCFULjcdUGm9euYJAHd',
 
-  loginURL: 'https://afc7b5a6b025b4828bf8bad6eadfdcee-eaa53f72a0e29f95.elb.us-east-1.amazonaws.com:443/am/oauth2/authorize?' +
-              'client_id=clientOIDC_0&response_type=code&scope=openid+profile+email+access-project+isMemberOf&' +
+  loginURL: 'https://ad7bec1a5d4a448ffb3673fc9a150873-aea79b9aae3a10f6.elb.us-gov-east-1.amazonaws.com:443/am/oauth2/authorize?' +
+              'client_id=clientOIDC_0&response_type=code&scope=openid+profile+email&' +
               'redirect_uri=http://localhost:4200/callback',
 
-  awsConsoleLoginURL: 'https://afc7b5a6b025b4828bf8bad6eadfdcee-eaa53f72a0e29f95.elb.us-east-1.amazonaws.com/am/saml2/jsp/idpSSOInit.jsp?metaAlias=/meta-idp&spEntityID=urn:amazon:webservices',              
+  awsConsoleLoginURL: 'https://ad7bec1a5d4a448ffb3673fc9a150873-aea79b9aae3a10f6.elb.us-gov-east-1.amazonaws.com/am/saml2/jsp/idpSSOInit.jsp?metaAlias=/meta-idp&spEntityID=urn:amazon:webservices:govcloud',              
 
   redirectURL: 'http://localhost:4200/callback',
 
