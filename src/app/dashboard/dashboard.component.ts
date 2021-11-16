@@ -63,6 +63,10 @@ export class DashboardComponent implements OnInit {
     window.open(environment.awsConsoleLoginURL,'_blank');
   }
 
+  getId() {
+    
+  }
+
   logout(): void {
     this.token = localStorage.getItem('token');    
     this.id_token = localStorage.getItem('id_token');  
