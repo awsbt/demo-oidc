@@ -23,11 +23,21 @@ export const environment = {
   postLogoutRedirectURL: 'http://localhost:4200/home',
 
   //todo
-  logout: 'http://localhost:4200/logout'
+  logout: 'http://localhost:4200/logout',
   // logout: 'https://afc7b5a6b025b4828bf8bad6eadfdcee-eaa53f72a0e29f95.elb.us-east-1.amazonaws.com/am/oauth2/connect/endSession?' +
   // 'client_id=clientOIDC_0&post_logout_redirect_uri=http://localhost:4200/home',
 
   //logout: 'https://afc7b5a6b025b4828bf8bad6eadfdcee-eaa53f72a0e29f95.elb.us-east-1.amazonaws.com:443/am/oauth2/logout?' +
   //        'client_id=clientOIDC_0&' +
   //        'logout_uri=http://localhost:4200/home'
+
+
+  cognitoUrl: 'https://cognito-identity.us-gov-west-1.amazonaws.com',
+
+  identityPoolId: 'us-gov-west-1:01378bc4-5440-4730-8642-4d6ec32853d8',
+
+  loginIdp: 'ad7bec1a5d4a448ffb3673fc9a150873-aea79b9aae3a10f6.elb.us-gov-east-1.amazonaws.com/am/oauth2'
+
+
+
 };
