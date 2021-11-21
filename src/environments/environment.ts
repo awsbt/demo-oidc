@@ -33,7 +33,7 @@ export const environment = {
 
   cognitoUrl: 'https://cognito-identity.us-gov-west-1.amazonaws.com',
 
-  identityPoolId: 'us-gov-west-1:01378bc4-5440-4730-8642-4d6ec32853d8',
+  identityPoolId: 'us-gov-west-1:eb3fa3f0-a54f-4332-a306-732f1775664a',
 
   loginIdp: 'ad7bec1a5d4a448ffb3673fc9a150873-aea79b9aae3a10f6.elb.us-gov-east-1.amazonaws.com/am/oauth2',
 

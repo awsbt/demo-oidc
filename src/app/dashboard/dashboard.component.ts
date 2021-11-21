@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AwsCognitoService } from '../service/aws-cognito.service';
 import { UserDetailService } from '../service/user-detail.service';
 import { LogoutService } from '../service/logout.service';
+import { IdentityService } from '../service/identity.service';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
@@ -21,7 +22,7 @@ export class DashboardComponent implements OnInit {
   code: any;
 
   constructor(private userDetailService: UserDetailService, private logoutService: LogoutService,
-              private http: HttpClient) { }
+    private identityService: IdentityService, private http: HttpClient) { }
 
   ngOnInit(): void {
     //console.log('Token: ', localStorage.getItem('token'));
@@ -61,6 +62,15 @@ export class DashboardComponent implements OnInit {
   aws() {
     //window.location.assign(environment.awsConsoleLoginURL);
     window.open(environment.awsConsoleLoginURL,'_blank');
+  }
+
+  getId() {  
+    console.log('Calling get identity');
+    this.id_token = localStorage.getItem('id_token');  
+     this.identityService.getIdentityFromCognito(this.id_token).subscribe
+      ((response: any) => {
+      console.log('Response: ', response);
+    })      
   }
 
   logout(): void {
