@@ -1,5 +1,6 @@
 export const environment = {
-  //worked on acme, iam saml identity provider, user0, user1, user2
+  //worked on acme,  user0, user1, user2
+  //IAM identity providers aws-acme-idp (SAML)
   production: false,
 
   sso_api_username: 'clientOIDC_0',
